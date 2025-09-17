@@ -5,7 +5,7 @@
 With the proposed technique, we integrate a depth prediction model with phase unwrapping guided by geometric constraints to overcome the limitations of traditional FPP, which typically relies on multiple image acquisitions and computationally intensive phase analysis. Our approach employs a transformer-based model fine-tuned for single-shot depth prediction from fringe images, enhancing robustness and accuracy in challenging scenarios such as complex surface geometries or dynamic environments.
 
 <p align="center">
-  <img src="figures/framework.png" alt="Proposed Framework" width="500"/>
+  <img src="figures/framework.png" alt="Proposed Framework" width="700"/>
 </p>
 
 To support training and evaluation, a synthetic dataset is generated using a digital twin of the FPP system within Blender. This integration of AI-driven depth prediction with geometric priors reduces dependency on multi-image phase unwrapping and enables high-speed 3D reconstruction.
@@ -58,7 +58,7 @@ This section explain how to establish a Digital twin of a structured light syste
 With this example, you can perform phase unwrapping guided by the predicted depth map obtained from the deep learning model.  
 
 <p align="center">
-  <img src="figures/unwrapping_example.png" alt="unwrapping_example" width="500"/>
+  <img src="figures/unwrapping_example.png" alt="unwrapping_example" width="700"/>
 </p>
 
 The predicted depth provides geometric constraints that help resolve ambiguities in the wrapped phase, improving robustness compared to traditional unwrapping methods.  
