@@ -30,6 +30,8 @@ The repository is organized as follows:
 
 - ```digital_twin/``` – Code, resources, and Blender project for generating synthetic datasets using a Blender-based digital twin of the FPP system.
 - ```ps_unwrapping/``` – Implementation of phase unwrapping by geometric constraints algorithm with local $Z_{min}$.
+- ```virtual_calib/``` – Code needed to perform a virtual calibration for the camera or the structured light system.
+- ```data/``` – Resources required to run ```ps_unwrapping/``` scripts.
 - ```scripts/``` – Utility scripts related to data generation and FPP processing. (Training and evaluation pipelines will be added soon.)
 - ```figures/``` – Figures and diagrams for documentation and visualization.
 
