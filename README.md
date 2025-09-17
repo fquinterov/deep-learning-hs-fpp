@@ -1,6 +1,6 @@
 # Deep learning assisted high-speed fringe projection profilometry
 
-This is the main repository for the deep learning-aided fringe projection profilometry (FPP) framework.
+**This is the main repository for the deep learning-aided fringe projection profilometry (FPP) framework.**
 
 With the proposed technique, we integrate a depth prediction model with phase unwrapping guided by geometric constraints to overcome the limitations of traditional FPP, which typically relies on multiple image acquisitions and computationally intensive phase analysis. Our approach employs a transformer-based model fine-tuned for single-shot depth prediction from fringe images, enhancing robustness and accuracy in challenging scenarios such as complex surface geometries or dynamic environments.
 
@@ -24,6 +24,16 @@ In this repository, code and resources for deep learning-assisted FPP reconstruc
 - [PyTorch](https://pytorch.org/)
 
 ***All necessary dependencies and software are Open-Sourse**
+
+## Structure of the repository
+The repository is organized as follows:
+
+- ```digital_twin/``` – Code, resources, and Blender project for generating synthetic datasets using a Blender-based digital twin of the FPP system.
+- ```ps_unwrapping/``` – Implementation of phase unwrapping by geometric constraints algorithm with local $Z_{min}$.
+- ```scripts/``` – Utility scripts related to data generation and FPP processing. (Training and evaluation pipelines will be added soon.)
+- ```figures/``` – Figures and diagrams for documentation and visualization.
+
+
 
 ## Set-up and Installation
 1. Download and install the **Blender Projector Add-on** from this repository. [Guide to installing plugins in Blender](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
