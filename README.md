@@ -37,12 +37,34 @@ The repository is organized as follows:
 
 ## Digital twin
 
+This section explain how to establish a Digital twin of a structured light system with Blender. You require the real-world SL calibration parameters. You can use the example calibration parameters in  ```data/calib_params/One stage_TSC_0_calib_pyread2.mat```
+
 <p align="center">
   <img src="figures/digital_twin.png" alt="Digital Twin" width="500"/>
 </p>
 
-1. Download and install the **Blender Projector Add-on** from this repository. [Guide to installing plugins in Blender](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
-2. If you have **CUDA-compatible graphics**, you can select it for rendering in the following settings. *Blender Preferences > System > Cycles Render Devices > CUDA.
-3. Install OpenCV and Scipy in Blender. Aquí recomiendo instalar los paquetes en tu instalación de Python y luego copiarlos en la ruta `C:/Program Files/Blender Foundation/Blender 3.x/3.x/python/lib/site-packages/`
+1. If you have **CUDA-compatible graphics**, you can select it for rendering in the following settings. *Blender Preferences > System > Cycles Render Devices > CUDA.
+2. Install OpenCV and Scipy in Blender. For this, go to the Blender python root: `cd C:\Program Files\Blender Foundation\Blender 4.0\4.0\python`. Then, run the following command in terminal `bin/python.exe -m pip install opencv-python -t "C:\Program Files\Blender Foundation\Blender 4.X\4.X\python\lib\site-packages"`. *If the module folder of your Blender python installation is different, change the target path.*
+3. Open the Blender project in `digital_twin/structured_light_digital_twin.blend`
+4. In the Scripting window, run the following scripts:
+    1. `camera.py` for the virtual camera
+    2. `projector.py` for the virtual projector
+5. You can change the projected image modifying `projector.py`
 
 ## Unwrapping with predicted depth example
+
+With this example, you can perform phase unwrapping guided by the predicted depth map obtained from the deep learning model.  
+
+<p align="center">
+  <img src="figures/unwrapping_example.png" alt="unwrapping_example" width="500"/>
+</p>
+
+The predicted depth provides geometric constraints that help resolve ambiguities in the wrapped phase, improving robustness compared to traditional unwrapping methods.  
+
+This allows more accurate reconstruction of complex surfaces and reduces the need for multi-image acquisitions.  
+
+To run this example:
+
+1. Clone this repository: git clone https://github.com/fquinterov/deep-learning-hs-fpp.git
+2. `cd deep-learning-hs-fpp`
+3. Run `ps_unwrapping\unwrapping_dl.py` to perform the phase unwrapping by geometric constraints of the wrapped phase of a mask surface located in `data\example\mask_wrapped_phase.mat`. It uses as reference the predicted depth `mask_depth_pred.npy`.
