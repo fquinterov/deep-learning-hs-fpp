@@ -4,7 +4,7 @@ This is the main repository for the deep learning-aided fringe projection profil
 
 With the proposed technique, we integrate a depth prediction model with phase unwrapping guided by geometric constraints to overcome the limitations of traditional FPP, which typically relies on multiple image acquisitions and computationally intensive phase analysis. Our approach employs a transformer-based model fine-tuned for single-shot depth prediction from fringe images, enhancing robustness and accuracy in challenging scenarios such as complex surface geometries or dynamic environments.
 
-![](figures\framework.png)
+![](figures/framework.png)
 
 To support training and evaluation, a synthetic dataset is generated using a digital twin of the FPP system within Blender. This integration of AI-driven depth prediction with geometric priors reduces dependency on multi-image phase unwrapping and enables high-speed 3D reconstruction.
 
